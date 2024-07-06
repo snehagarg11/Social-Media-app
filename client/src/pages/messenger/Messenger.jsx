@@ -18,8 +18,8 @@ export default function Messenger() {
   const [onlineUsers, setOnlineUsers] = useState([]);
   const socket = useRef();
   const { user } = useContext(AuthContext);
-  const scrollRef = useRef();
-
+ 
+ const scrollRef = useRef();
   useEffect(() => {
     socket.current = io("ws://localhost:8900");
     socket.current.on("getMessage", (data) => {
